@@ -29,7 +29,6 @@ class SpeedUp : GhostPowerup
             gameManager.gameSpeed -= 500f / 4;
         }
         
-        await Task.Delay(4000); // Ran with another 4 seconds with normal speed before ghost effect ran out
-        Debug.Log("Speed ran out");
+        // Ran with another 4 seconds with normal speed before ghost effect ran out
     }
 }
