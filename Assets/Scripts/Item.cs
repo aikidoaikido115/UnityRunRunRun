@@ -6,7 +6,7 @@ using UnityEngine;
 // Create an abstract class Item
 abstract class Item : MonoBehaviour
 {
-    public abstract void activate(Player player);
+    public abstract void activate();
     /*
      * 
      * เรียกใช้โดยใส่ลงใน OnTriggerEnter ใน Player class

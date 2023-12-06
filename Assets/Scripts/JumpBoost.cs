@@ -9,9 +9,11 @@ using static UnityEngine.GraphicsBuffer;
 class JumpBoost : Item
 {
     private float leftEdge;
+    private Player currentPlayer;
     private void Start()
     {
         leftEdge = Camera.main.ScreenToWorldPoint(Vector3.zero).x - 2f;
+        currentPlayer = FindObjectOfType<Player>();
     }
     private void Update()
     {
@@ -24,16 +26,16 @@ class JumpBoost : Item
     }
 
 
-    async public override void activate(Player player)
+    async public override void activate()
     {
         // Make player jump higher and fall slower (lower gravity)
-        player.gravity = 8.0f * 2f;
-        player.jumpForce = 10.0f;
+        currentPlayer.gravity = 8.0f * 2f;
+        currentPlayer.jumpForce = 10.0f;
         // Wait for effect to ran out (Temporary 5 seconds)
         await Task.Delay(5000);
         // If effect ran out, back to normal gravity and jump force
-        player.gravity = 9.81f * 2f;
-        player.jumpForce = 8f;
+        currentPlayer.gravity = 9.81f * 2f;
+        currentPlayer.jumpForce = 8f;
     }
     
 }

@@ -7,9 +7,11 @@ using UnityEngine;
 class GhostPowerup : Item
 {
     protected float leftEdge;
+    protected Player currentPlayer;
     private void Start()
     {
         leftEdge = Camera.main.ScreenToWorldPoint(Vector3.zero).x - 2f;
+        currentPlayer = FindObjectOfType<Player>();
     }
     private void Update()
     {
@@ -21,23 +23,27 @@ class GhostPowerup : Item
         }
     }
 
-    
-    public override void activate(Player player)
+
+    public override void activate()
     {
         // Make player immune to collisions when pick up the item
-        ghost(player);
+        ghost();
     }
 
-    async public void ghost(Player player)
+    async public void ghost()
     {
-        // Make player able to run through obstacle
-        // player.invincible = true; : Require addition L value in Player class. Any better solutions?
-        // ทำอย่างนี้ได้เช่นกัน แต่ผู้เล่นจะเดินผ่านทุกอย่างรวมไอเท็มด้วย
-        Collider playerCollider = player.GetComponent<Collider>();
-        playerCollider.enabled = false;
-
-        await Task.Delay(1000); // Effect lasts for 10 seconds
-        // player.invincible = false;
-        playerCollider.enabled = true;
+        currentPlayer.isInvincible = true; // ให้ผู้เล่นเป็นอมตะ
+        currentPlayer.ghostInEffect += 1; // ให้เพิ่มในตัวแปร ghostInEffect ว่าเกมมีการเรียกใช้เอฟเฟกต์อยู่
+        await Task.Delay(15000); // Effect lasts for 15 seconds
+        // อีกทางเลือก
+        /* await Task.Delay(11000);
+         * ทำให้ผู้เล่นกะพริบเพื่อให้รู้ว่าเอฟเฟกต์กำลังจะหมด
+         * await Task.Delay(4000);
+         */
+        currentPlayer.ghostInEffect -= 1; // ให้ตัวละครรู้ว่าเอฟเฟกต์ ghost ที่ทำงานหมดไปแล้วหนึ่ง
+        if (currentPlayer.ghostInEffect == 0)
+        {   // เอฟเฟกต์หมดสมบูรณ์ปลดอมตะออกจากผู้เล่น
+            currentPlayer.isInvincible = false;
+        }
     }
 }

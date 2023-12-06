@@ -11,9 +11,12 @@ public class GameManager : MonoBehaviour
 
     public float initialGameSpeed = 250f; //เริ่มแรก
     public float gameSpeedIncrease = 3f;
-    public float gameSpeed { get; private set; } //speed ล่าสุด
-
+    public float gameSpeed { get; set; } //speed ล่าสุด
+    public float score;
+    public float scoreMultiplier; // มีผลกับเอฟเฟกต์ DoubleScore
     public TextMeshProUGUI gameOverText;
+    public TextMeshProUGUI currentScoreText;
+    public TextMeshProUGUI highScoreText;
     public Button retryButton;
 
     private Player player;
@@ -44,7 +47,7 @@ public class GameManager : MonoBehaviour
     {
         player = FindObjectOfType<Player>();
         spawner = FindObjectOfType<Spawner>();
-
+        
         NewGame();
     }
 
@@ -57,6 +60,8 @@ public class GameManager : MonoBehaviour
             Destroy(obstacle.gameObject);
         }
 
+        score = 0;
+        scoreMultiplier = 1;
         gameSpeed = initialGameSpeed;
         enabled = true;
 
@@ -64,6 +69,8 @@ public class GameManager : MonoBehaviour
         spawner.gameObject.SetActive(true);
         gameOverText.gameObject.SetActive(false);
         retryButton.gameObject.SetActive(false);
+
+        UpdateHiscore();
     }
 
     public void GameOver()
@@ -76,10 +83,27 @@ public class GameManager : MonoBehaviour
         spawner.gameObject.SetActive(false);
         gameOverText.gameObject.SetActive(true);
         retryButton.gameObject.SetActive(true);
+
+        UpdateHiscore();
     }
 
     private void Update()
     {
         gameSpeed += gameSpeedIncrease * Time.deltaTime;
+        score += gameSpeed * Time.deltaTime * scoreMultiplier;
+        currentScoreText.text = Mathf.FloorToInt(score).ToString("D8");
+    }
+
+    private void UpdateHiscore()
+    {
+        float hiscore = PlayerPrefs.GetFloat("hiscore", 0);
+
+        if (score > hiscore)
+        {
+            hiscore = score;
+            PlayerPrefs.SetFloat("hiscore", hiscore);
+        }
+
+        highScoreText.text = Mathf.FloorToInt(hiscore).ToString("D8");
     }
 }
