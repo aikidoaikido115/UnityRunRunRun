@@ -32,16 +32,16 @@ class GhostPowerup : Item
 
     async public void ghost()
     {
-        currentPlayer.isInvincible = true; // ให้ผู้เล่นเป็นอมตะ
-        currentPlayer.ghostInEffect += 1; // ให้เพิ่มในตัวแปร ghostInEffect ว่าเกมมีการเรียกใช้เอฟเฟกต์อยู่
-        await Task.Delay(11000); // Effect lasts for 15 seconds
+        currentPlayer.isInvincible = true; // Make player invincible
+        currentPlayer.ghostInEffect += 1; // Stack up amount of ghostInEffect
+        await Task.Delay(15000); // Effect lasts for 20 seconds
 
         currentPlayer.isBlinking = true;
 
-        await Task.Delay(4000);
-        currentPlayer.ghostInEffect -= 1; // ให้ตัวละครรู้ว่าเอฟเฟกต์ ghost ที่ทำงานหมดไปแล้วหนึ่ง
+        await Task.Delay(5000);
+        currentPlayer.ghostInEffect -= 1; // An effect related to ghost powerup ran out of effect
         if (currentPlayer.ghostInEffect == 0)
-        {   // เอฟเฟกต์หมดสมบูรณ์ปลดอมตะออกจากผู้เล่น
+        {   // Player is now non-invincible
             currentPlayer.isInvincible = false;
         }
     }

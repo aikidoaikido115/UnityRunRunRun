@@ -28,7 +28,7 @@ class DoubleScore : Item
     async public override void activate()
     {
         gameManager.scoreMultiplier = 2;
-        await Task.Delay(10000);
+        await Task.Delay(20000);
         gameManager.scoreMultiplier = 1;
     }
 }

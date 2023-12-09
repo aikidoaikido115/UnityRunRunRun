@@ -107,3 +107,6 @@ public class GameManager : MonoBehaviour
         highScoreText.text = Mathf.FloorToInt(hiscore).ToString("D8");
     }
 }
+
+
+//test212312312321

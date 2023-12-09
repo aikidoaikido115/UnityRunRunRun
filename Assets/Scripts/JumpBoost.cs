@@ -31,8 +31,8 @@ class JumpBoost : Item
         // Make player jump higher and fall slower (lower gravity)
         currentPlayer.gravity = 8.0f * 2f;
         currentPlayer.jumpForce = 10.0f;
-        // Wait for effect to ran out (Temporary 5 seconds)
-        await Task.Delay(5000);
+        // Wait for effect to ran out (Temporary 10 seconds)
+        await Task.Delay(10000);
         // If effect ran out, back to normal gravity and jump force
         currentPlayer.gravity = 9.81f * 2f;
         currentPlayer.jumpForce = 8f;

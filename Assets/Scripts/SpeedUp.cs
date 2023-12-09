@@ -20,15 +20,16 @@ class SpeedUp : GhostPowerup
         // float speedIncrease = gameManager.gameSpeed * 1.5f;
         // Make player run faster and immune to obstacle collisions
         ghost();
+        float speedIncrease = 500f + (gameManager.gameSpeed / 3);
         // If set in GM is private, can't access the thing
-        gameManager.gameSpeed += 500f;
-        await Task.Delay(7000); // Effects last for 7 full seconds before fading
+        gameManager.gameSpeed += speedIncrease;
+        await Task.Delay(11000); // Effects last for 11 full seconds before fading
         for (int seconds = 0; seconds < 4; seconds++) {
             // The effect fade down each seconds out of 4 seconds
             await Task.Delay(1000);
-            gameManager.gameSpeed -= 500f / 4;
+            gameManager.gameSpeed -= speedIncrease/4;
         }
         
-        // Ran with another 4 seconds with normal speed before ghost effect ran out
+        // Ran with another 5 seconds with normal speed before ghost effect ran out
     }
 }
