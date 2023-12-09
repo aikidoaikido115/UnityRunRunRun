@@ -60,8 +60,18 @@ public class GameManager : MonoBehaviour
             Destroy(obstacle.gameObject);
         }
 
+        Item[] items = FindObjectsOfType<Item>();
+
+        foreach (var item in items)
+        {
+            Destroy(item.gameObject);
+        }
+
+        // Initialization
         score = 0;
         scoreMultiplier = 1;
+        player.gravity = 9.81f * 2f;
+        player.jumpForce = 8f;
         gameSpeed = initialGameSpeed;
         enabled = true;
 
