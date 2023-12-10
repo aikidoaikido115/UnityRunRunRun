@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public float initialGameSpeed = 250f; //เริ่มแรก
+    public float initialGameSpeed = 250; //เริ่มแรก
     public float gameSpeedIncrease = 3f;
     public float gameSpeed { get; set; } //speed ล่าสุด
     public float score;
