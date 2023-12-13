@@ -61,6 +61,12 @@ public class Player : MonoBehaviour
             // ถ้าผู้เล่นชนสิ่งกีดขวางตอนที่ไม่อมตะ
             FindObjectOfType<GameManager>().GameOver();
         }
+        if (target.CompareTag("Obstacle") && isInvincible)
+        {
+            // ถ้าผู้เล่นชนสิ่งกีดขวางตอนที่อมตะ พังเป้าหมายทิ้ง (เบิ้ม ๆ)
+            Destroy(target.gameObject);
+        }
+
         if (target.CompareTag("Item")) 
         {
             target.GetComponent<Item>().activate();
@@ -72,21 +78,21 @@ public class Player : MonoBehaviour
 
     IEnumerator blink()
     {
-        float blinkDuration = 4f;
+        float blinkDuration = 5f;
         while (blinkDuration > 0)
         {
             // Toggle the visibility of the GameObject : ChatGPT :)
             renderer.enabled = false;
 
             // Wait for a short duration (you can adjust the duration as needed)
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.25f);
 
             renderer.enabled = true;
 
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.25f);
 
             // Subtract the elapsed time from the total blink duration
-            blinkDuration -= 0.4f;
+            blinkDuration -= 0.5f;
         }
 
         // Ensure the GameObject is visible after the blinking is done
