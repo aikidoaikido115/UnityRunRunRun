@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
 
     public bool isNewGame;
 
+    public TimerScene2 retry_bg_swap;
+
 
     //บัคเดี๋ยวมาแก้
     //public TimerScene2 reset;
@@ -75,6 +77,10 @@ public class GameManager : MonoBehaviour
         enabled = true;
 
         isNewGame = true;
+
+        retry_bg_swap.day.SetActive(true);
+        retry_bg_swap.evening.SetActive(false);
+        retry_bg_swap.isEvening = false;
 
         //บัคเดี๋ยวมาแก้
 

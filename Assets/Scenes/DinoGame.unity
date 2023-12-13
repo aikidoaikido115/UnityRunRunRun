@@ -954,30 +954,30 @@ MonoBehaviour:
     spawnChance: 0.2
   - prefab: {fileID: 6569804972830385629, guid: a2150d64e8bbe27429d1c36aa5dc5115, type: 3}
     spawnChance: 0.18
-  - prefab: {fileID: 5356971698125898203, guid: 2b7ac105a2dbd16409cc27b384d424e7, type: 3}
+  - prefab: {fileID: 4331569460991127070, guid: 2d03c2c8db3ba6a4b942c6ebaf221182, type: 3}
+    spawnChance: 0.06
+  - prefab: {fileID: 6229644285277605643, guid: 00a7b509bc793254797de1ab1d856574, type: 3}
     spawnChance: 0.16
   - prefab: {fileID: 3257735285180587342, guid: 2009ff0b1aa99894e92cbc82e8426801, type: 3}
     spawnChance: 0.14
-  - prefab: {fileID: 6229644285277605643, guid: 00a7b509bc793254797de1ab1d856574, type: 3}
+  - prefab: {fileID: 7896651377803416912, guid: e3798e4142926c04f88ecc0a7ca3b104, type: 3}
     spawnChance: 0.12
   - prefab: {fileID: 3931505635375763033, guid: 34f5fd0ca4f4e784baa087506b901b67, type: 3}
     spawnChance: 0.1
   - prefab: {fileID: 6458644240529645889, guid: 7aa806e3cb488ef45993e631493df8ac, type: 3}
     spawnChance: 0.08
-  - prefab: {fileID: 4331569460991127070, guid: 2d03c2c8db3ba6a4b942c6ebaf221182, type: 3}
-    spawnChance: 0.06
-  - prefab: {fileID: 7896651377803416912, guid: e3798e4142926c04f88ecc0a7ca3b104, type: 3}
-    spawnChance: 0.04
   - prefab: {fileID: 701184679809109992, guid: 890240b505c80ed4e82806a9ab344a01, type: 3}
-    spawnChance: 0.02
+    spawnChance: 0.08
   - prefab: {fileID: 3170169592361724855, guid: 5e9136cc2dfe0b342a9c3520b67967ca, type: 3}
-    spawnChance: 0.01
+    spawnChance: 0.08
   - prefab: {fileID: 4224817173953333252, guid: 3eb3a27a7efba3d488a76597d813de2d, type: 3}
-    spawnChance: 0.01
-  - prefab: {fileID: 1162749230702259581, guid: 6cc1859a8a2d2b740a9d291cab60e314, type: 3}
-    spawnChance: 0.01
+    spawnChance: 0.08
   - prefab: {fileID: 1872158634311758713, guid: 49580b8d6a8cb7149a8c31345af2804d, type: 3}
-    spawnChance: 0.01
+    spawnChance: 0.08
+  - prefab: {fileID: 1162749230702259581, guid: 6cc1859a8a2d2b740a9d291cab60e314, type: 3}
+    spawnChance: 0.08
+  - prefab: {fileID: 5356971698125898203, guid: 2b7ac105a2dbd16409cc27b384d424e7, type: 3}
+    spawnChance: 0.08
   minSpawnRate: 1
   maxSpawnRate: 2
 --- !u!4 &770844168
@@ -1174,7 +1174,8 @@ MonoBehaviour:
   currentScoreText: {fileID: 1333746794}
   highScoreText: {fileID: 759670107}
   retryButton: {fileID: 1312164133}
-  isNewGame: 0
+  isNewGame: 1
+  retry_bg_swap: {fileID: 1208656091}
 --- !u!4 &1208656090
 Transform:
   m_ObjectHideFlags: 0

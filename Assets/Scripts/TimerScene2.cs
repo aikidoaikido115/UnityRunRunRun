@@ -33,6 +33,7 @@ public class TimerScene2 : MonoBehaviour
         {
             changeInterval = 30f;
             isEvening = false;
+
         }
     }
 
