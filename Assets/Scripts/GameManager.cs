@@ -27,10 +27,13 @@ public class GameManager : MonoBehaviour
 
     public TimerScene2 retry_bg_swap;
 
+    public AudioClip dead;
+    private AudioSource audioSource;
+
 
     //บัคเดี๋ยวมาแก้
     //public TimerScene2 reset;
-    
+
 
 
     private void Awake()
@@ -57,7 +60,8 @@ public class GameManager : MonoBehaviour
     {
         player = FindObjectOfType<Player>();
         spawner = FindObjectOfType<Spawner>();
-        
+        audioSource = GetComponent<AudioSource>();
+
         NewGame();
         
     }
@@ -103,7 +107,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-
+        audioSource.PlayOneShot(dead);
         gameSpeed = 0f;
         enabled = false;
 
