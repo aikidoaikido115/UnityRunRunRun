@@ -68,6 +68,8 @@
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\AnimatedSprite.cs" />
+    <Compile Include="Assets\Scripts\TimerScene2.cs" />
+    <Compile Include="Assets\Scripts\TimerScene.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
   </ItemGroup>
   <ItemGroup>

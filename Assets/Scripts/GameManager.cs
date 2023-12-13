@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 
 
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
@@ -21,6 +22,13 @@ public class GameManager : MonoBehaviour
 
     private Player player;
     private Spawner spawner;
+
+    public bool isNewGame;
+
+
+    //บัคเดี๋ยวมาแก้
+    //public TimerScene2 reset;
+    
 
 
     private void Awake()
@@ -49,6 +57,7 @@ public class GameManager : MonoBehaviour
         spawner = FindObjectOfType<Spawner>();
         
         NewGame();
+        
     }
 
     public void NewGame()
@@ -65,6 +74,19 @@ public class GameManager : MonoBehaviour
         gameSpeed = initialGameSpeed;
         enabled = true;
 
+        isNewGame = true;
+
+        //บัคเดี๋ยวมาแก้
+
+        //reset game TimeScene2 counter
+        //float changeInterval = reset.changeInterval;
+        //Debug.Log(changeInterval);
+        //changeInterval = 30f;
+        //reset scene to Day
+        //bool isEvening = reset.isEvening;
+        //isEvening = false;
+
+
         player.gameObject.SetActive(true);
         spawner.gameObject.SetActive(true);
         gameOverText.gameObject.SetActive(false);
@@ -79,6 +101,10 @@ public class GameManager : MonoBehaviour
         gameSpeed = 0f;
         enabled = false;
 
+
+        isNewGame = false;
+
+
         player.gameObject.SetActive(false);
         spawner.gameObject.SetActive(false);
         gameOverText.gameObject.SetActive(true);
@@ -91,7 +117,7 @@ public class GameManager : MonoBehaviour
     {
         gameSpeed += gameSpeedIncrease * Time.deltaTime;
         score += gameSpeed * Time.deltaTime * scoreMultiplier;
-        currentScoreText.text = Mathf.FloorToInt(score).ToString("D8");
+        currentScoreText.text = Mathf.FloorToInt(score).ToString("D8");       
     }
 
     private void UpdateHiscore()

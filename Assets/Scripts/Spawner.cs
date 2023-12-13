@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Spawner : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class Spawner : MonoBehaviour
 
         foreach (var obj in objects)
         {
+            StartCoroutine(TimeSleep(2.0f));
+            Debug.Log("2 s wait");
             if (spawnChance < obj.spawnChance)
             {
                 GameObject obstacle = Instantiate(obj.prefab);
@@ -41,5 +44,9 @@ public class Spawner : MonoBehaviour
         }
 
         Invoke(nameof(Spawn), Random.Range(minSpawnRate, maxSpawnRate));
+    }
+    IEnumerator TimeSleep(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
     }
 }
