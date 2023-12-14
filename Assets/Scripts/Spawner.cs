@@ -42,7 +42,7 @@ public class Spawner : MonoBehaviour
             {
                 starvation_counter += 1;
                 Debug.Log(starvation_counter);
-                if (starvation_counter < 3)
+                if (starvation_counter < 7)
                 {
                     GameObject obstacle = Instantiate(obj.prefab);
                     obstacle.transform.position += transform.position;
