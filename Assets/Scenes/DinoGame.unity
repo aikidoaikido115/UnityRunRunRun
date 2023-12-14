@@ -1159,12 +1159,12 @@ MonoBehaviour:
     spawnChance: 0.14
   - prefab: {fileID: 3931505635375763033, guid: 34f5fd0ca4f4e784baa087506b901b67, type: 3}
     spawnChance: 0.12
-  - prefab: {fileID: 7896651377803416912, guid: e3798e4142926c04f88ecc0a7ca3b104, type: 3}
+  - prefab: {fileID: 5356971698125898203, guid: 2b7ac105a2dbd16409cc27b384d424e7, type: 3}
     spawnChance: 0.1
   - prefab: {fileID: 6458644240529645889, guid: 7aa806e3cb488ef45993e631493df8ac, type: 3}
     spawnChance: 0.08
   - prefab: {fileID: 701184679809109992, guid: 890240b505c80ed4e82806a9ab344a01, type: 3}
-    spawnChance: 0.079
+    spawnChance: 0.65
   - prefab: {fileID: 3170169592361724855, guid: 5e9136cc2dfe0b342a9c3520b67967ca, type: 3}
     spawnChance: 0.078
   - prefab: {fileID: 4224817173953333252, guid: 3eb3a27a7efba3d488a76597d813de2d, type: 3}
@@ -1173,10 +1173,11 @@ MonoBehaviour:
     spawnChance: 0.076
   - prefab: {fileID: 1162749230702259581, guid: 6cc1859a8a2d2b740a9d291cab60e314, type: 3}
     spawnChance: 0.075
-  - prefab: {fileID: 5356971698125898203, guid: 2b7ac105a2dbd16409cc27b384d424e7, type: 3}
+  - prefab: {fileID: 7896651377803416912, guid: e3798e4142926c04f88ecc0a7ca3b104, type: 3}
     spawnChance: 0.074
   minSpawnRate: 1
   maxSpawnRate: 2
+  starvation_counter: 0
 --- !u!4 &770844168
 Transform:
   m_ObjectHideFlags: 0

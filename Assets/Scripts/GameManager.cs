@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     private AudioSource audioSource;
 
 
-    //บัคเดี๋ยวมาแก้
+    
     //public TimerScene2 reset;
 
 
@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
         retry_bg_swap.evening.SetActive(false);
         retry_bg_swap.isEvening = false;
 
-        //บัคเดี๋ยวมาแก้
+        
 
         //reset game TimeScene2 counter
         //float changeInterval = reset.changeInterval;

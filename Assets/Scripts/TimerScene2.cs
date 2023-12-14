@@ -9,11 +9,11 @@ public class TimerScene2 : MonoBehaviour
     public float changeInterval = 30f;
     public bool isEvening = false;
     public GameManager reset;
-    //bool isNewGame;
+    
 
     private void Start()
     {
-        //แก้บัคเวลาจริงไม่เปลี่ยน (ใช้วิธีนี้แก้ speed เกมได้ด้วย)
+        
         changeInterval = 30f;
         //isNewGame = reset.isNewGame;
         Debug.Log(reset.isNewGame);
