@@ -44,7 +44,7 @@ git clone https://github.com/aikidoaikido115/UnityRunRunRun.git
 
 ## ภาพตัวอย่างเกม
 ![Screenshot 1](/img/Picture1.png)
-![Screenshot 2](/img/Picture2.png)
+![Screenshot 2](/img/Picture7.png)
 ![Screenshot 3](/img/Picture3.png)
 ![Screenshot 4](/img/Picture4.png)
 ![Screenshot 5](/img/Picture5.png)
